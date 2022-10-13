@@ -1,0 +1,42 @@
+﻿@page "/"
+
+<div>
+    <h3>Click this button to return test data</h3>
+
+    <button
+        @onclick="@(T => GetTestData())">
+        click me
+    </button>
+</div>
+<div>
+    @if(ToShow != null)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var testData in ToShow)
+                {
+                    <tr>
+                        <td>@testData.Id</td>
+                        <td>@testData.Name</td>
+                        <td>@testData.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
